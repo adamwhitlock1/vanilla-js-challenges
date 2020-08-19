@@ -15,3 +15,7 @@ export const findMedian = (numbers) => {
   // move to the middle and return
   return numbers[(count - 1) / 2];
 };
+
+export const untestedFunction = (word) => {
+  console.log(word);
+};

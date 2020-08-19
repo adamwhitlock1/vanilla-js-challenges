@@ -2,22 +2,22 @@ import { findMedian } from "../median.js";
 
 const testData = [
   {
+    label: "single item array",
     numbers: [4],
     answer: 4,
   },
+  {
+    label: "three item array",
+    numbers: [1, 2, 3],
+    answer: 2,
+  },
 ];
 
-describe("sanity checks", () => {
-  it("should be a function", () => {
-    const findMedian = () => () => {};
-    const theResult = findMedian();
-    expect(typeof theResult).toBe("function");
-  });
-});
-
 describe("result tests", () => {
-  it("tests single positive element", () => {
-    const result = findMedian(testData[0].numbers);
-    expect(result).toBe(testData[0].answer);
+  testData.map((data) => {
+    it(`tests: ${data.label}`, () => {
+      const result = findMedian(data.numbers);
+      expect(result).toBe(data.answer);
+    });
   });
 });
